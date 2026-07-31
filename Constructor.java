@@ -1,100 +1,60 @@
 public class Constructor {
     public static void main(String[] args) {
-        //DEFAULT CONSTRUCTOR
-        Mobile m1 = new Mobile();
-        m1.name = "Samsung";
-        m1.price = 50000;
-        m1.model = "Galaxy A17";
-        m1.os = "Android";
+        Student s1 = new Student();
+
+        s1.name = "Shrimayi";
+        s1.rollno = 256;
+
+        System.out.println("This is Default Constructor: ");
+        System.out.println("Name: " +s1.name);
+        System.out.println("Roll Number: "+s1.rollno);
         
-        System.out.println("DEFAULT CONSTRUCTOR");
-        System.out.println("Name: " +m1.name);
-         System.out.println("Price: " +m1.price);
-         System.out.println("Model: " +m1.model);
-         System.out.println("OS: " +m1.os);
-         
-         System.out.println("");
-         System.out.println("----------------------------------------");
-         
-         //PARAMETERIZED CONSTRUCTOR
-          System.out.println("PARAMETERIZED CONSTRUCTOR");
-        Mobile m2 = new Mobile("Iphone", 55000,"16PRO" , "IOS");
-        System.out.println("Name: " +m2.getname());
-         System.out.println("Price: " +m2.getprice());
-         System.out.println("Model: " +m2.getmodel());
-         System.out.println("OS: " +m2.getos());
+        Student s2 = new Student();
         
-        System.out.println("");
-         System.out.println("----------------------------------------");
+        s2.name = "Swarali";
+        s2.rollno = 298;
+        System.out.println("-----------------------------------------");
+        System.out.println("This is Parameterized Constructor");
+        System.out.println("Name: " +s2.getname());
+        System.out.println("Roll Number: " +s2.getrollno());
         
-        //COPY CONSTRUCTOR
-        Mobile m3 = new Mobile(m1);
-        System.out.println("COPY CONSTRUCTOR");
-         System.out.println("Name: " +m3.getname());
-         System.out.println("Price: " +m3.getprice());
-         System.out.println("Model: " +m3.getmodel());
-         System.out.println("OS: " +m3.getos());
         
-}
+    }
 }
 
-//Creating classes 
-//Default
-
-class Mobile {
+//Default Constructor 
+class Student  {
     String name;
-    int price;
-    String model;
-    String os;
+    int rollno;
 
-Mobile() {
-    name = "NULL";
-    price = 0;
-    model = "NULL";
-    os = "NULL";
+    Student() {
+        name = "NULL";
+        rollno = 0;
+    }
+    
+    
+//Parameterized Constructor
 
-}
-
-//Parameterized
-Mobile(String name , int price, String model , String os) {
+Student(String name , int rollno) {
     this.name = name;
-    this.price = price;
-    this.model = model;
-    this.os = os;
+    this.rollno = rollno;
+    
 }
     void setname(String name) {
-    this.name = name;        
+        this.name = name;
     }
-    void setprice(int price) {
-    this.price = price;
-    }
-    void setmodel(String model) {
-    this.model = model;    
-        
-    }
-    void setos(String os) {
-    this.os = os;    
-        
+    
+    void setrollno(int rollno) {
+        this.rollno = rollno;
     }
     
     String getname() {
-       return name; 
-    }
-    int getprice() {
-        return price;
-    }
-    String getmodel() {
-        return model ;
-    }
-    String getos() {
-       return os;
+        return this.name;
     }
     
-    //Copy
-    Mobile(Mobile m) {
-        this.name = m.name;
-        this.price = m.price;
-        this.model = m.model;
-        this.os = m.os;
+    int getrollno() {
+        return this.rollno;
     }
-    }
+    
+}
+
